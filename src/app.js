@@ -29,9 +29,7 @@ var run = function () {
 
   function loadFiles (files) {
     for (var f in files) {
-      var key = utils.fileKey(f);
-      var content = files[f].content;
-      storage.loadFile(key, content);
+      storage.loadFile(utils.fileKey(f), files[f].content);
     }
     editor.setCacheFile(utils.fileKey(Object.keys(files)[0]));
     updateFiles();
